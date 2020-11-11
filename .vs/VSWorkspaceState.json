@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\main",
+    "\\src\\main\\deploy",
+    "\\src\\main\\java",
+    "\\src\\main\\java\\frc",
+    "\\src\\main\\java\\frc\\robot",
+    "\\src\\main\\java\\frc\\robot\\commands",
+    "\\src\\main\\java\\frc\\robot\\subsystems",
+    "\\vendordeps"
+  ],
+  "SelectedNode": "\\src\\main\\java\\frc\\robot\\Robot.java",
+  "PreviewInSolutionExplorer": false
+}
