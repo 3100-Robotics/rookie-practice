@@ -7,6 +7,8 @@
 
 package frc.robot.commands;
 
+import frc.robot.Robot;
+import frc.robot.RobotContainer;
 import frc.robot.subsystems.Drive;
 
 import java.util.function.DoubleSupplier;
@@ -33,7 +35,7 @@ public class DefaultDrive extends CommandBase {
     m_left = left;
     m_right = right;
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(subsystem);
+    addRequirements(Robot.Drive);
   }
 
   // Called when the command is initially scheduled.
@@ -44,7 +46,11 @@ public class DefaultDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    double leftStickY = RobotContainer.DriverRawAxis(1);
+    double rightStickY = RobotContainer.DriverRawAxis(4);
 
+    Drive.setLeftMotor(leftStickY);
+    Drive.setRightMotor(rightStickY);
     //We need to tell the robot to drive here
 
   }
