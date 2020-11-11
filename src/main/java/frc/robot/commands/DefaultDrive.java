@@ -45,9 +45,10 @@ public class DefaultDrive extends CommandBase {
   @Override
   public void execute() {
 
-    //We need to tell the robot to drive here
-
+    m_subsystem.tankDrive(m_left.getAsDouble(), m_right.getAsDouble());
   }
+
+  
 
   // Called once the command ends or is interrupted.
   @Override

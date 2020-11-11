@@ -22,10 +22,11 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
 
   //We need a drive subsystem
-  
+  public final static Drive m_robotDrive = new Drive();
 
   //We need a XboxController
-  
+  public final static XboxController m_driveController = new XboxController(0);
+
 
 
   /**
@@ -36,7 +37,11 @@ public class RobotContainer {
     configureButtonBindings();
 
     //We need to declare a default command here
-    
+    m_robotDrive.setDefaultCommand(
+        // // A split-stick arcade command, with forward/backward controlled by the left
+        // // hand, and turning controlled by the right.
+        new DefaultDrive(m_robotDrive, () -> -m_driveController.getY(GenericHID.Hand.kLeft),
+            () -> m_driveController.getX(GenericHID.Hand.kRight)));
   }
 
   /**

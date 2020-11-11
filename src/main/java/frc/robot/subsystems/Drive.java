@@ -8,6 +8,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import static frc.robot.Constants.*;
 
 public class Drive extends SubsystemBase {
 
@@ -21,9 +22,11 @@ public class Drive extends SubsystemBase {
 
   }
 
-  public void drive(double left, double right){
+  public void tankDrive(double leftSpeed, double rightSpeed){
 
     //We need to declare what type of drivetrain we want here (Tank or Arcade drive)
+    leftMotor.set(leftSpeed);
+    rightMotor.set(rightSpeed);
 
   }
 
