@@ -7,12 +7,13 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Drive extends SubsystemBase {
-
-  //We need a DifferentialDrive defined here
-
+  private final Talon motorLeft = new Talon(0);
+  private final Talon motorRight = new Talon(1);
+  // We need a DifferentialDrive defined here
 
   /**
    * Creates a new Drive subsystem
@@ -21,7 +22,7 @@ public class Drive extends SubsystemBase {
 
   }
 
-  public void drive(double left, double right){
+  public void drive(final double left, final double right) {
 
     //We need to declare what type of drivetrain we want here (Tank or Arcade drive)
 
@@ -31,5 +32,14 @@ public class Drive extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+  }
+
+  public void setLeftMotor(double speed){
+
+    motorLeft.set(ControlMode.PercentOutput, speed);
+  }
+  public void setRightMotor(double speed){
+
+    motorRight.set(ControlMode.PercentOutput, speed);
   }
 }

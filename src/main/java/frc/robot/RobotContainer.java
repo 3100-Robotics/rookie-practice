@@ -23,15 +23,20 @@ public class RobotContainer {
 
   //We need a drive subsystem
   
-
+  public static Drive driveTrain = new DriveTrain();
   //We need a XboxController
   
+  private XboxController driverController = new XboxController(0);
 
+  public static double DriverRawAxis(int axis){
+    return driverController.getRawAxis(1);
+  }
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
   public RobotContainer() {
+    
     // Configure the button bindings
     configureButtonBindings();
 
