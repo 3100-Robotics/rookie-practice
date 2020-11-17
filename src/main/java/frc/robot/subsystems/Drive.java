@@ -40,6 +40,6 @@ public class Drive extends SubsystemBase {
   }
   public void setRightMotor(double speed){
 
-    motorRight.set(ControlMode.PercentOutput, speed);
+    motorRight.set(ControlMode.PercentOutput, -1*speed);
   }
 }
