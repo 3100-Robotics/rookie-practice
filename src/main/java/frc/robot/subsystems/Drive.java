@@ -7,13 +7,14 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import static frc.robot.Constants.*;
+import frc.robot.commands.DefaultDrive;
 
 public class Drive extends SubsystemBase {
 
-  //We need a DifferentialDrive defined here
-
+  private static Spark left = new Spark(1);
+  private static Spark right = new Spark(2);
 
   /**
    * Creates a new Drive subsystem
@@ -21,12 +22,20 @@ public class Drive extends SubsystemBase {
   public Drive() {
 
   }
+  public void initDefaultCommand(){
 
-  public void tankDrive(double leftSpeed, double rightSpeed){
+    setDefaultCommand(new DefaultDrive());
 
-    //We need to declare what type of drivetrain we want here (Tank or Arcade drive)
-    leftMotor.set(leftSpeed);
-    rightMotor.set(rightSpeed);
+  }
+
+  public static void leftSpeed(double speed) {
+
+    left.set(speed);
+
+  }
+  public static void rightSpeed(double speed){
+
+    right.set(speed);
 
   }
 
